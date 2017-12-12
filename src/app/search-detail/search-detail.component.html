@@ -1,0 +1,18 @@
+<div *ngIf='query' class='text-center'>
+<h1>
+  search for {{ query }}
+</h1>	
+</div>
+<div *ngIf='!query' class='text-center'>
+	<h1>Search ....</h1>
+	<search></search>
+</div>
+
+<div *ngIf='videoList.length > 0'>
+<h1>{{ date | date:"short"}}</h1>
+<div *ngFor='let item of videoList'>
+	<a href='/videos/{{ item.slug }}/'>{{ item.name }}</a>
+
+	<iframe height=498 width=510 [src]="getEmbedUrl(item) | safe" frameborder=0 allowfullscreen *ngIf='item.embed'></iframe>
+</div>
+</div>

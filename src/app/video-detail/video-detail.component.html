@@ -1,0 +1,12 @@
+
+
+<div >
+<h1 *ngIf='video'>{{ video.name }}</h1>
+<hr/>
+<div *ngIf='!video'>Loading...</div>
+<div *ngIf='video'>
+
+	<iframe height=996 width=1020 [src]="getEmbedUrl(video) | safe" frameborder=0 *ngIf='video.embed'> </iframe>
+</div>
+</div>
+
